@@ -13,8 +13,8 @@ Regular Expressions in Python
 .. Sources can also be included from subfolders of this directory.
    (e.g. "DataStructures/queues.rst").
 
-SECTION 1: Introduction
-:::::::::::::::::::::::
+Introduction
+------------
 
 If there’s one thing that humans do well, it’s pattern matching.
 You can categorize the numbers in the following list with barely any
@@ -515,8 +515,44 @@ very quickly become difficult to read, so let’s break this into parts:
 * ``)?`` this ends the non-storing group; the question mark means it is all optional
 * ``$`` at which point we must be at the end of the string.
 
-Here is another example. Say you want to match a phone number and find the area code,
-prefix, and number. Note that when you want to match to a real parenthesis, you have to precede it with a backslash to make
+Now that you know how to extract the last name and initial, you are in a position to use ``sub()`` to
+swap their positions. The ``re.sub()`` method takes three arguments:
+    
+- A pattern to search for
+- A replacement pattern
+- The string to search in
+
+So, ``re.sub(r'-\d{4}', r'-XXXX', '301-22-0109')`` will replace the last four digits of a Social Security
+number by Xes. This example does not work in ActiveCode (since ``re.sub()`` is not implemented), but it will work in IDLE.
+    
+::
+
+   import re
+   result = re.sub(r'-\d{4}', r'-XXXX', '301-22-0109')
+   print(result)
+
+
+If you are using grouping, you can use ``\1`` and ``\2`` in the replacement pattern to stand for
+the first and second matched groups. This is how you can write a program that will change names
+like “Gonzales, M” to “M. Gonzales”; in the following example, the comma and initial are *not* optional.
+
+::
+    
+   import re
+   def swap_name(in_str):
+       result = re.sub(r'^(\w+),?\s*([A-Z])$', r'\2. \1', in_str )
+       return result
+       
+   print(swap_name('Smith, J'))
+   print(swap_name('Joe-Bob Smythe-Fauntleroy'))
+   print(swap_name('Madonna'))
+   print(swap_name('Gonzales M'))
+    
+If you run the preceding program in IDLE, you will see that if the pattern does not match, ``re.sub()`` returns a copy of the input string, untouched..
+
+Finally, another example with groups. Say you want to match a phone number and find the area code,
+prefix, and number. In this case, rather than doing a substitution, we return a list with the relevant information, or a list of three empty strings
+if the input is not valid. Note that when you want to match to a real parenthesis, you have to precede it with a backslash to make
 it “not part of a group.” You can do it this way:
 
 .. activecode:: re_example12
@@ -571,7 +607,7 @@ Let’s match to find all the occurrences of this pattern in the following strin
     
    'Insert tabs B3, D-7, and C6 into slot A9.'
 
-.. activecode:: re_example14
+.. activecode:: re_example13
    :language: python
    :caption: Finding all occurrences
 

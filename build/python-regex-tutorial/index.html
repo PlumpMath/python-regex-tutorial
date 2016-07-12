@@ -259,7 +259,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Regular Expressions in Python</a><ul>
-<li><a class="reference internal" href="#section-1-introduction">SECTION 1: Introduction</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#the-simplest-patterns">The Simplest Patterns</a></li>
 <li><a class="reference internal" href="#matching-any-single-character">Matching any single character</a><ul>
 <li><a class="reference internal" href="#matching-classes-of-characters">Matching classes of characters</a></li>
@@ -272,8 +272,6 @@
 <li><a class="reference internal" href="#advanced-pattern-matching">Advanced Pattern Matching</a></li>
 <li><a class="reference internal" href="#finding-all-occurrences">Finding All Occurrences</a></li>
 <li><a class="reference internal" href="#conclusion">Conclusion</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -310,8 +308,8 @@
   
   <div class="section" id="regular-expressions-in-python">
 <h1>Regular Expressions in Python<a class="headerlink" href="#regular-expressions-in-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="section-1-introduction">
-<h2>SECTION 1: Introduction<a class="headerlink" href="#section-1-introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>If there’s one thing that humans do well, it’s pattern matching.
 You can categorize the numbers in the following list with barely any
 thought:</p>
@@ -332,8 +330,9 @@ look for patterns:</p>
 <li>A fraction is a series of digits followed by a slash, followed by another series of digits.</li>
 <li>A valid name consists of a series of letters, a comma followed by zero or more spaces, followed by another series of letters.</li>
 </ul>
+</div>
 <div class="section" id="the-simplest-patterns">
-<h3>The Simplest Patterns<a class="headerlink" href="#the-simplest-patterns" title="Permalink to this headline">¶</a></h3>
+<h2>The Simplest Patterns<a class="headerlink" href="#the-simplest-patterns" title="Permalink to this headline">¶</a></h2>
 <p>The simplest pattern to look for is a single letter. If you want to
 see if a variable <code class="docutils literal"><span class="pre">word</span></code> contains the letter <code class="docutils literal"><span class="pre">e</span></code>, for
 example, you can use this code:</p>
@@ -374,7 +373,7 @@ the <code class="docutils literal"><span class="pre">find()</span></code> string
 something that isn’t so easy to do with <code class="docutils literal"><span class="pre">find()</span></code>:</p>
 </div>
 <div class="section" id="matching-any-single-character">
-<h3>Matching any single character<a class="headerlink" href="#matching-any-single-character" title="Permalink to this headline">¶</a></h3>
+<h2>Matching any single character<a class="headerlink" href="#matching-any-single-character" title="Permalink to this headline">¶</a></h2>
 <p>Let’s make a pattern that will match the letter <code class="docutils literal"><span class="pre">e</span></code>
 followed by <em>any character at all</em>, followed by the letter
 <code class="docutils literal"><span class="pre">t</span></code>. To say “any character at all”, you use a dot.
@@ -402,7 +401,7 @@ words).  It will not match <em>beast</em> (two letters between the <em>e</em>
 and <em>t</em>), <em>etch</em> (no letters between the <em>e</em> and
 <em>t</em>), or <em>ease</em> (no letter <em>t</em> at all!).</p>
 <div class="section" id="matching-classes-of-characters">
-<h4>Matching classes of characters<a class="headerlink" href="#matching-classes-of-characters" title="Permalink to this headline">¶</a></h4>
+<h3>Matching classes of characters<a class="headerlink" href="#matching-classes-of-characters" title="Permalink to this headline">¶</a></h3>
 <p>Now let’s find out how to narrow down the field a bit. We’d like to be
 able to find a pattern consisting of the letter <em>b</em>, any vowel
 (<em>a</em>, <em>e</em>, <em>i</em>, <em>o</em>, or <em>u</em>), followed
@@ -504,7 +503,7 @@ find_ssn('SSN is 562-99-6713')
 </div>
 </div>
 <div class="section" id="anchors">
-<h3>Anchors<a class="headerlink" href="#anchors" title="Permalink to this headline">¶</a></h3>
+<h2>Anchors<a class="headerlink" href="#anchors" title="Permalink to this headline">¶</a></h2>
 <p>All the patterns youe’ve seen so far will find a match anywhere within
 a string, which is usually - but not always - what you want.  For example,
 you might insist on a capital letter, but only as the very first character
@@ -557,7 +556,7 @@ examples of the preceding paragraph;
 <code class="docutils literal"><span class="pre">/\Bhat\B/</span></code> matches only <em>the shattered glass</em>.</p>
 </div>
 <div class="section" id="repetition">
-<h3>Repetition<a class="headerlink" href="#repetition" title="Permalink to this headline">¶</a></h3>
+<h2>Repetition<a class="headerlink" href="#repetition" title="Permalink to this headline">¶</a></h2>
 <p>All of these classes match only one character; what if we want to
 match three digits in a row, or an arbitrary number of vowels?
 You can follow any class or character by a repetition count:</p>
@@ -619,7 +618,7 @@ find_last_and_initial('Nguyen C')
 </ul>
 </div>
 <div class="section" id="grouping">
-<h3>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h3>
+<h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h2>
 <p>So far so good, but what if you want to scan for a last name,
 followed by an optional comma-whitespace-initial; thus matching only a
 last name like &#8220;Smith&#8221; or a full &#8220;Smith, J&#8221;?  You need to put the
@@ -643,7 +642,7 @@ valid_name('Morgan D')
 with a backslash to make it non-special.</p>
 </div>
 <div class="section" id="modifiers">
-<h3>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h3>
+<h2>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h2>
 <p>If you want a pattern match to be case-insenstive, add the
 <code class="docutils literal"><span class="pre">flags=re.I</span></code> to the <code class="docutils literal"><span class="pre">search()</span></code> call. (The <code class="docutils literal"><span class="pre">I</span></code> stands for
 <code class="docutils literal"><span class="pre">IGNORECASE</span></code>, which you may also spell out completely if you wish.
@@ -668,7 +667,7 @@ looks like; it does not work in ActiveCode, but will work fine in IDLE.</p>
 matches a particular pattern.</p>
 </div>
 <div class="section" id="advanced-pattern-matching">
-<h3>Advanced Pattern Matching<a class="headerlink" href="#advanced-pattern-matching" title="Permalink to this headline">¶</a></h3>
+<h2>Advanced Pattern Matching<a class="headerlink" href="#advanced-pattern-matching" title="Permalink to this headline">¶</a></h2>
 <p>All you have done so far is testing to see whether a pattern matches
 or not.  Now that you can match a person’s last name and initial, you
 might want to be able to grab them out of the string so that you can
@@ -766,8 +765,38 @@ very quickly become difficult to read, so let’s break this into parts:</p>
 <li><code class="docutils literal"><span class="pre">)?</span></code> this ends the non-storing group; the question mark means it is all optional</li>
 <li><code class="docutils literal"><span class="pre">$</span></code> at which point we must be at the end of the string.</li>
 </ul>
-<p>Here is another example. Say you want to match a phone number and find the area code,
-prefix, and number. Note that when you want to match to a real parenthesis, you have to precede it with a backslash to make
+<p>Now that you know how to extract the last name and initial, you are in a position to use <code class="docutils literal"><span class="pre">sub()</span></code> to
+swap their positions. The <code class="docutils literal"><span class="pre">re.sub()</span></code> method takes three arguments:</p>
+<ul class="simple">
+<li>A pattern to search for</li>
+<li>A replacement pattern</li>
+<li>The string to search in</li>
+</ul>
+<p>So, <code class="docutils literal"><span class="pre">re.sub(r'-\d{4}',</span> <span class="pre">r'-XXXX',</span> <span class="pre">'301-22-0109')</span></code> will replace the last four digits of a Social Security
+number by Xes. This example does not work in ActiveCode (since <code class="docutils literal"><span class="pre">re.sub()</span></code> is not implemented), but it will work in IDLE.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">r&#39;-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">r&#39;-XXXX&#39;</span><span class="p">,</span> <span class="s1">&#39;301-22-0109&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you are using grouping, you can use <code class="docutils literal"><span class="pre">\1</span></code> and <code class="docutils literal"><span class="pre">\2</span></code> in the replacement pattern to stand for
+the first and second matched groups. This is how you can write a program that will change names
+like “Gonzales, M” to “M. Gonzales”; in the following example, the comma and initial are <em>not</em> optional.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="k">def</span> <span class="nf">swap_name</span><span class="p">(</span><span class="n">in_str</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">r&#39;^(\w+),?\s*([A-Z])$&#39;</span><span class="p">,</span> <span class="s1">r&#39;\2. \1&#39;</span><span class="p">,</span> <span class="n">in_str</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">swap_name</span><span class="p">(</span><span class="s1">&#39;Smith, J&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">swap_name</span><span class="p">(</span><span class="s1">&#39;Joe-Bob Smythe-Fauntleroy&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">swap_name</span><span class="p">(</span><span class="s1">&#39;Madonna&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">swap_name</span><span class="p">(</span><span class="s1">&#39;Gonzales M&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>If you run the preceding program in IDLE, you will see that if the pattern does not match, <code class="docutils literal"><span class="pre">re.sub()</span></code> returns a copy of the input string, untouched..</p>
+<p>Finally, another example with groups. Say you want to match a phone number and find the area code,
+prefix, and number. In this case, rather than doing a substitution, we return a list with the relevant information, or a list of three empty strings
+if the input is not valid. Note that when you want to match to a real parenthesis, you have to precede it with a backslash to make
 it “not part of a group.” You can do it this way:</p>
 
 <textarea data-component="activecode" id=re_example12 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Phone number with groups'>
@@ -800,7 +829,7 @@ print(data)
 </ul>
 </div>
 <div class="section" id="finding-all-occurrences">
-<h3>Finding All Occurrences<a class="headerlink" href="#finding-all-occurrences" title="Permalink to this headline">¶</a></h3>
+<h2>Finding All Occurrences<a class="headerlink" href="#finding-all-occurrences" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">re.search()</span></code> method finds only the first occurrence of a pattern within a string.
 If you want to find <em>all</em> the matches in a string, use <code class="docutils literal"><span class="pre">re.findall()</span></code>, which returns a
 list of matched substrings. (Unlike <code class="docutils literal"><span class="pre">re.search()</span></code>, which returns match objects.)
@@ -814,7 +843,7 @@ dash and a single digit:</p>
 </pre></div>
 </div>
 
-<textarea data-component="activecode" id=re_example14 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Finding all occurrences'>
+<textarea data-component="activecode" id=re_example13 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Finding all occurrences'>
 import re
 message = 'Insert tabs B3, D-7, and C6 into slot A9.'
 result = re.findall(r'([A-Z]-?\d)', message)
@@ -826,12 +855,11 @@ else:
 </textarea>
 </div>
 <div class="section" id="conclusion">
-<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial has shown you some of the main points of pattern matching. To learn all the ins and outs of
 regular expressions, see the <a class="reference external" href="https://docs.python.org/3/library/re.html">Python documentation</a></p>
 <p>Once you learn regular expressions, you will be able to use them in many text editors. For example, the
 “Replace” and “Find” dialogs in IDLE have a checkbox that let you use regular expressions to find and replace text.</p>
-</div>
 </div>
 </div>
 

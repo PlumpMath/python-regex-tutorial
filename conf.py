@@ -44,7 +44,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Runestone Interactive Overview'
+project = 'Interactive Tutorial for Regular Expressions in Python'
 copyright = '2016 J David Eisenberg'
 
 # The version info for the project you're documenting, acts as replacement for

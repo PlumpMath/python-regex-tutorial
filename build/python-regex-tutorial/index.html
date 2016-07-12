@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Regular Expressions in Python &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="#" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'python-regex-tutorial';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'python-regex-tutorial';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="#">Regular Expressions in Python</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='#'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/python-regex-tutorial/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/python-regex-tutorial/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/static/help/bugreports.html'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Regular Expressions in Python</a><ul>
+<li><a class="reference internal" href="#section-1-introduction">SECTION 1: Introduction</a><ul>
+<li><a class="reference internal" href="#the-simplest-patterns">The Simplest Patterns</a></li>
+<li><a class="reference internal" href="#matching-any-single-character">Matching any single character</a><ul>
+<li><a class="reference internal" href="#matching-classes-of-characters">Matching classes of characters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#anchors">Anchors</a></li>
+<li><a class="reference internal" href="#repetition">Repetition</a></li>
+<li><a class="reference internal" href="#grouping">Grouping</a></li>
+<li><a class="reference internal" href="#modifiers">Modifiers</a></li>
+<li><a class="reference internal" href="#advanced-pattern-matching">Advanced Pattern Matching</a></li>
+<li><a class="reference internal" href="#finding-all-occurrences">Finding All Occurrences</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="regular-expressions-in-python">
+<h1>Regular Expressions in Python<a class="headerlink" href="#regular-expressions-in-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="section-1-introduction">
+<h2>SECTION 1: Introduction<a class="headerlink" href="#section-1-introduction" title="Permalink to this headline">¶</a></h2>
+<p>If there’s one thing that humans do well, it’s pattern matching.
+You can categorize the numbers in the following list with barely any
+thought:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">321</span><span class="o">-</span><span class="mi">40</span><span class="o">-</span><span class="mi">0909</span>
+<span class="mi">302</span><span class="o">-</span><span class="mi">555</span><span class="o">-</span><span class="mi">8754</span>
+<span class="mi">3</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">66</span>
+<span class="mi">95135</span><span class="o">-</span><span class="mi">0448</span>
+</pre></div>
+</div>
+<p>You can tell at a glance which of the following words can’t possibly
+be valid English words by the pattern of consonants and vowels:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grunion</span> <span class="n">vortenal</span> <span class="n">pskov</span> <span class="n">trebular</span> <span class="n">elibm</span> <span class="n">talus</span>
+</pre></div>
+</div>
+<p><strong>Regular expressions</strong> are Javascript’s method of letting your program
+look for patterns:</p>
+<ul class="simple">
+<li>A fraction is a series of digits followed by a slash, followed by another series of digits.</li>
+<li>A valid name consists of a series of letters, a comma followed by zero or more spaces, followed by another series of letters.</li>
+</ul>
+<div class="section" id="the-simplest-patterns">
+<h3>The Simplest Patterns<a class="headerlink" href="#the-simplest-patterns" title="Permalink to this headline">¶</a></h3>
+<p>The simplest pattern to look for is a single letter. If you want to
+see if a variable <code class="docutils literal"><span class="pre">word</span></code> contains the letter <code class="docutils literal"><span class="pre">e</span></code>, for
+example, you can use this code:</p>
+
+<textarea data-component="activecode" id=re_example1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Simple regular expression'>
+import re
+
+word = input('Enter a string: ')
+found = re.search(r'e', word)
+if found:
+    print(word, 'contains the letter "e".')
+else:
+    print(word, 'does not contain the letter "e".')
+</textarea>
+<p>The pattern is a string preceded by the letter <code class="docutils literal"><span class="pre">r</span></code>, which tells Python to interpet the string as a regular expression.</p>
+<p>Of course, you can put more than one letter in your pattern. You can
+look for the word <code class="docutils literal"><span class="pre">eat</span></code> anywhere in a word. This example uses a function
+that is called repeatedly for a series of words.</p>
+
+<textarea data-component="activecode" id=re_example2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Another simple regular expression'>
+import re
+def find_eat(word):
+    found = re.search(r'eat', word)
+    if found:
+        print(word, 'contains the letters "eat".')
+    else:
+        print(word, 'does not contain the letters "eat".')
+
+find_eat('heater')
+find_eat('treat')
+find_eat('easy')
+find_eat('metal')
+</textarea>
+<p>This will successfully match the words <em>eat</em>, <em>heater</em>, and
+<em>treat</em>, but won’t match <em>easy</em>, <em>metal</em>, or
+<em>hat</em>. You may be saying, &#8220;So what? I can do the same thing with
+the <code class="docutils literal"><span class="pre">find()</span></code> string function.&#8221;  Yes, you can, but now let’s do
+something that isn’t so easy to do with <code class="docutils literal"><span class="pre">find()</span></code>:</p>
+</div>
+<div class="section" id="matching-any-single-character">
+<h3>Matching any single character<a class="headerlink" href="#matching-any-single-character" title="Permalink to this headline">¶</a></h3>
+<p>Let’s make a pattern that will match the letter <code class="docutils literal"><span class="pre">e</span></code>
+followed by <em>any character at all</em>, followed by the letter
+<code class="docutils literal"><span class="pre">t</span></code>. To say “any character at all”, you use a dot.
+Here’s the pattern:</p>
+
+<textarea data-component="activecode" id=re_example3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Finding any single character'>
+import re
+def finder(pattern, word):
+    found = re.search(pattern, word)
+    if found:
+        print(word, 'contains the pattern.')
+    else:
+        print(word, 'does not contain the pattern.')
+
+finder(r'e.t', 'better')
+finder(r'e.t', 'either')
+finder(r'e.t', 'best')
+finder(r'e.t', 'beast')
+finder(r'e.t', 'etch')
+finder(r'e.t', 'ease')
+</textarea>
+<p>This will match <em>better</em>, <em>either</em>, and <em>best</em>
+(the dot will match the <em>t</em>, <em>i</em>, and <em>s</em> in those
+words).  It will not match <em>beast</em> (two letters between the <em>e</em>
+and <em>t</em>), <em>etch</em> (no letters between the <em>e</em> and
+<em>t</em>), or <em>ease</em> (no letter <em>t</em> at all!).</p>
+<div class="section" id="matching-classes-of-characters">
+<h4>Matching classes of characters<a class="headerlink" href="#matching-classes-of-characters" title="Permalink to this headline">¶</a></h4>
+<p>Now let’s find out how to narrow down the field a bit. We’d like to be
+able to find a pattern consisting of the letter <em>b</em>, any vowel
+(<em>a</em>, <em>e</em>, <em>i</em>, <em>o</em>, or <em>u</em>), followed
+by the letter <em>t</em>.  To say &#8220;any one of a certain series of
+characters&#8221;, you enclose them in square brackets:</p>
+
+<textarea data-component="activecode" id=re_example4 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Finding one of a set of characters'>
+import re
+def finder(pattern, word):
+    found = re.search(pattern, word)
+    if found:
+        print(word, 'contains the pattern.')
+    else:
+        print(word, 'does not contain the pattern.')
+
+finder(r'b[aeiou]t', 'bat')
+finder(r'b[aeiou]t', 'bet')
+finder(r'b[aeiou]t', 'rabbit')
+finder(r'b[aeiou]t', 'robotic')
+finder(r'b[aeiou]t', 'abutment')
+finder(r'b[aeiou]t', 'boot')
+finder(r'b[aeiou]t', 'beautiful')
+</textarea>
+<p>This matches words like <em>bat</em>, <em>bet</em>, <em>rab</em><strong>bit</strong>,
+<em>ro</em><strong>bot</strong><em>ic</em>, and <em>a</em><strong>but</strong><em>ment</em>.  It won’t match
+<em>boot</em> or <em>beautiful</em>, because there is more than one letter between the <em>b</em> and
+<em>t</em>, and the class matches only a single character. (You’ll see how
+to check for multiple vowels later.)</p>
+<p>There are abbreviations for establishing a series of letters:
+<code class="docutils literal"><span class="pre">[a-f]</span></code> is the same as <code class="docutils literal"><span class="pre">[abcdef]</span></code>;
+<code class="docutils literal"><span class="pre">[A-Gm-p]</span></code> is the same as <code class="docutils literal"><span class="pre">[ABCDEFGmnop]</span></code>;
+<code class="docutils literal"><span class="pre">[0-9]</span></code> matches a single digit (same as <code class="docutils literal"><span class="pre">[0123456789]</span></code>).</p>
+<p>You may also complement (negate) a class; the next
+two patterns will look for the letter
+<em>e</em> followed by anything <strong>except</strong> a vowel, followed by
+the letter <em>t</em>; or any character <strong>except</strong> a capital letter:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">r&#39;e[^aeiou]t&#39;</span>
+<span class="s1">r&#39;[^A-Z]&#39;</span>
+</pre></div>
+</div>
+<p>There are some classes that are so useful that Python provides
+quick and easy abbrevations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="53%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Abbreviation</th>
+<th class="head">Means</th>
+<th class="head">Same as</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\d</span></code></td>
+<td>a digit</td>
+<td><code class="docutils literal"><span class="pre">[0-9]</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\w</span></code></td>
+<td>a &#8220;word&#8221; character; uppercase letter, lowercase letter, digit, or underscore</td>
+<td><code class="docutils literal"><span class="pre">[A-Za-z0-9_]</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\s</span></code></td>
+<td>a whitespace character (blank, new line, tab)</td>
+<td><code class="docutils literal"><span class="pre">[</span> <span class="pre">\r\t\n]</span></code></td>
+</tr>
+<tr class="row-odd"><td colspan="3">And their complements:</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\D</span></code></td>
+<td>a non-digit</td>
+<td><code class="docutils literal"><span class="pre">[^0-9]</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\W</span></code></td>
+<td>a non-word character</td>
+<td><code class="docutils literal"><span class="pre">[^A-Za-z0-9_]</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\S</span></code></td>
+<td>a non-whitespace character</td>
+<td><code class="docutils literal"><span class="pre">[^</span> <span class="pre">\r\t\n]</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Thus, this pattern: <code class="docutils literal"><span class="pre">\d\d\d-\d\d-\d\d\d\d</span></code> matches a Social Security number; again, you’ll see a shorter way later on.</p>
+
+<textarea data-component="activecode" id=re_example5 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Finding a social security number'>
+import re
+def find_ssn(in_str):
+    found = re.search(r'\d\d\d-\d\d-\d\d\d\d', in_str)
+    if found:
+        print(in_str, 'contains a social security number.')
+    else:
+        print(in_str, 'does not contain a social security number.')
+
+find_ssn('301-22-0156') # these are all made-up numbers
+find_ssn('301-555-1212')
+find_ssn('SSN is 562-99-6713')
+</textarea>
+</div>
+</div>
+<div class="section" id="anchors">
+<h3>Anchors<a class="headerlink" href="#anchors" title="Permalink to this headline">¶</a></h3>
+<p>All the patterns youe’ve seen so far will find a match anywhere within
+a string, which is usually - but not always - what you want.  For example,
+you might insist on a capital letter, but only as the very first character
+in the string. Or, you might say that an employee ID number has to end
+with a digit. Or, you might want to find the word <em>go</em> only if it
+is at the beginning of a word, so that you will find it in <em>You met another, and pfft you was</em>  <strong>go</strong><em>ne.</em>, but
+you won’t mistakenly find it
+in <em>I for</em><strong>go</strong><em>t my umbrella</em>. This is the purpose of
+an anchor; to make sure that you are at a certain boundary before you
+continue the match. Unlike character classes, which match individual
+characters in a string, these anchors do not match any character; they
+simply establish that you are on the correct boundaries.</p>
+<p>The up-arrow <code class="docutils literal"><span class="pre">^</span></code> matches the beginning of a line, and
+the dollar sign <code class="docutils literal"><span class="pre">$</span></code> matches the end of a line.  Thus,
+<code class="docutils literal"><span class="pre">^[A-Z]</span></code> matches a capital letter at the beginning of the
+line. Note that if you put the <code class="docutils literal"><span class="pre">^</span></code> <em>inside</em> the
+square brackets, that would mean something entirely different!
+A pattern <code class="docutils literal"><span class="pre">\d$</span></code> matches a digit at the end of a line.
+These are the boundaries you will use most often.</p>
+<p>The other two anchors are <code class="docutils literal"><span class="pre">\b</span></code> and <code class="docutils literal"><span class="pre">\B</span></code>, which stand for
+a &#8220;word boundary&#8221; and &#8220;non-word boundary&#8221;.  For example, if you want
+to find the word <em>met</em> at the beginning of a word, we write
+the pattern <code class="docutils literal"><span class="pre">r'\bmet</span></code>, which will match <em>The metal plate</em> and <em>The metropolitan lifestyle</em>,
+but not <em>Wear your bike helmet</em>.
+The pattern <code class="docutils literal"><span class="pre">r'ing\b'</span></code> will match <em>Hiking is fun</em>
+and <em>Reading, writing, and arithmetic</em>, but not <em>Gold ingots
+are heavy</em>.  Finally,the pattern <code class="docutils literal"><span class="pre">r'/\bhat\b</span></code> matches only
+the <em>The hat is red</em> but not <em>That is the question</em> or <em>she hates anchovies</em> or <em>the shattered glass</em>.</p>
+
+<textarea data-component="activecode" id=re_example6 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Word boundary test'>
+import re
+def find_boundary(in_str):
+    found1 = re.search(r'\bmet', in_str)
+    found2 = re.search(r'ing\b', in_str)
+    found3 = re.search(r'\bhat\b', in_str)
+    if found1:
+        print(in_str, 'has "met" at the start of a word.')
+    if found2:
+        print(in_str, 'has "ing" at the end of a word.')
+    if found3:
+        print(in_str, 'has the word "hat" in it.')
+
+in_str = input('Enter one of the preceding sentences:')
+find_boundary(in_str)
+</textarea>
+<p>While <code class="docutils literal"><span class="pre">\b</span></code> is used to find the breakpoint between words and
+non-words, <code class="docutils literal"><span class="pre">\B</span></code> finds pairs of letters or nonletters;
+<code class="docutils literal"><span class="pre">/\Bmet/</span></code> and <code class="docutils literal"><span class="pre">/ing\b/</span></code> match the opposite
+examples of the preceding paragraph;
+<code class="docutils literal"><span class="pre">/\Bhat\B/</span></code> matches only <em>the shattered glass</em>.</p>
+</div>
+<div class="section" id="repetition">
+<h3>Repetition<a class="headerlink" href="#repetition" title="Permalink to this headline">¶</a></h3>
+<p>All of these classes match only one character; what if we want to
+match three digits in a row, or an arbitrary number of vowels?
+You can follow any class or character by a repetition count:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pattern</th>
+<th class="head">Matches</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">r'b[aeiou]{2}t'</span></code></td>
+<td><code class="docutils literal"><span class="pre">b</span></code> followed by two vowels, followed by <code class="docutils literal"><span class="pre">t</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">r'A\d{3,}'</span></code></td>
+<td>The letter <code class="docutils literal"><span class="pre">A</span></code> followed by 3 or more digits</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">r'[A-Z]{,5}'</span></code></td>
+<td>Zero to five capital letters</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">r'\w{3,7}'</span></code></td>
+<td>Three to seven &#8220;word&#8221; characters</td>
+</tr>
+</tbody>
+</table>
+<p>This lets you rewrite the social security number pattern match
+as <code class="docutils literal"><span class="pre">r'\d{3}-\d{2}-\d{4}'</span></code></p>
+<p>There are three repetitions that are so common that Python has
+special symbols for them: <code class="docutils literal"><span class="pre">*</span></code> means “zero or more,”
+<code class="docutils literal"><span class="pre">+</span></code> means “one or more,” and
+<code class="docutils literal"><span class="pre">?</span></code> means “zero or one.”  Thus, if you want to look
+for lines consisting of last names followed by a first initial,
+you could use this pattern:</p>
+
+<textarea data-component="activecode" id=re_example7 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Finding last name and initial'>
+import re
+def find_last_and_initial(in_str):
+    found = re.search(r'^\w+,?\s*[A-Z]$', in_str)
+    if found:
+        print(in_str, 'contains the pattern.')
+    else:
+        print(in_str, 'does not contain the pattern.')
+
+find_last_and_initial('Smith, J')
+find_last_and_initial('M Cano')
+find_last_and_initial('Nguyen C')
+</textarea>
+<p>Let’s analyze that pattern by parts:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">^</span></code> starting at the beginning of the string,</li>
+<li><code class="docutils literal"><span class="pre">\w+</span></code> look for one or more word characters</li>
+<li><code class="docutils literal"><span class="pre">,?</span></code> followed by an optional comma (zero or one commas)</li>
+<li><code class="docutils literal"><span class="pre">\s*</span></code> zero or more spaces</li>
+<li><code class="docutils literal"><span class="pre">[A-Z]</span></code> and a capital letter</li>
+<li><code class="docutils literal"><span class="pre">$</span></code> which must be at the end of the string.</li>
+</ul>
+</div>
+<div class="section" id="grouping">
+<h3>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h3>
+<p>So far so good, but what if you want to scan for a last name,
+followed by an optional comma-whitespace-initial; thus matching only a
+last name like &#8220;Smith&#8221; or a full &#8220;Smith, J&#8221;?  You need to put the
+comma, whitespace, and initial into a unit with parentheses, and then
+follow it with a <code class="docutils literal"><span class="pre">?</span></code> to indicate that the whole group is optional.</p>
+
+<textarea data-component="activecode" id=re_example8 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Using a group'>
+import re
+def valid_name(in_str):
+    found = re.search(r'^\w+(,?\s*[A-Z])?$', in_str)
+    if found:
+        print(in_str, 'contains the pattern.')
+    else:
+        print(in_str, 'does not contain the pattern.')
+
+valid_name('Smith, J')
+valid_name('Madonna')
+valid_name('Morgan D')
+</textarea>
+<p>Note: If you want to match a parenthesis in your pattern, you have to precede it
+with a backslash to make it non-special.</p>
+</div>
+<div class="section" id="modifiers">
+<h3>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h3>
+<p>If you want a pattern match to be case-insenstive, add the
+<code class="docutils literal"><span class="pre">flags=re.I</span></code> to the <code class="docutils literal"><span class="pre">search()</span></code> call. (The <code class="docutils literal"><span class="pre">I</span></code> stands for
+<code class="docutils literal"><span class="pre">IGNORECASE</span></code>, which you may also spell out completely if you wish.
+The following example shows a pattern that will match any Canadian postal
+code in upper or lower case. Canadian postal codes consist of a letter, a digit,
+and another letter, followed by a space, a digit, a letter, and another digit.
+An example of a valid postal code would be <code class="docutils literal"><span class="pre">A5B</span> <span class="pre">6R9</span></code>. Here is what the code
+looks like; it does not work in ActiveCode, but will work fine in IDLE.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="k">def</span> <span class="nf">valid_postcode</span><span class="p">(</span><span class="n">in_str</span><span class="p">):</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">r&#39;^[A-Z]\d[A-Z]\s+\d[A-Z]\d$&#39;</span><span class="p">,</span> <span class="n">in_str</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">found</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">in_str</span><span class="p">,</span> <span class="s1">&#39;is a valid postal code&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">in_str</span><span class="p">,</span> <span class="s1">&#39;is not a valid postal code.&#39;</span><span class="p">)</span>
+
+<span class="n">valid_postcode</span><span class="p">(</span><span class="s1">&#39;A5B 6R9&#39;</span><span class="p">)</span>
+<span class="n">valid_postcode</span><span class="p">(</span><span class="s1">&#39;c7H 8j2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At this point, you know pretty much everything you need to test whether a string
+matches a particular pattern.</p>
+</div>
+<div class="section" id="advanced-pattern-matching">
+<h3>Advanced Pattern Matching<a class="headerlink" href="#advanced-pattern-matching" title="Permalink to this headline">¶</a></h3>
+<p>All you have done so far is testing to see whether a pattern matches
+or not.  Now that you can match a person’s last name and initial, you
+might want to be able to grab them out of the string so that you can
+change &lt;i&gt;Martinez, A&lt;/i&gt; to &lt;i&gt;A. Martinez&lt;/i&gt;. To accomplish this,
+you will need something other than <code class="docutils literal"><span class="pre">search()</span></code>; you will need the
+<code class="docutils literal"><span class="pre">sub()</span></code> method to do substitution. You will also have to use
+the grouping parentheses, which have a
+side effect:  whenever you use parentheses to
+group something, the pattern matching operation stores the part of the
+string that matched the group so that you can use it later on.</p>
+<p>It is now time to reveal a secret: the return value from <code class="docutils literal"><span class="pre">search()</span></code> is not a boolean; it is a
+<em>matching object</em> that has special properties that you can examine and use. In the following example,
+we have put parentheses around the “last name” part of the pattern as well as the “comma and
+initial” part. If there is a match, the program will display whatever was found in the
+grouping parentheses. The vertical bars are in the <code class="docutils literal"><span class="pre">print()</span></code> so that you can see
+where there are blanks (if any).</p>
+
+<textarea data-component="activecode" id=re_example9 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Seeing Contents of a Group'>
+import re
+def valid_name(in_str):
+    found = re.search(r'^(\w+)(,?\s*[A-Z])?$', in_str)
+    if found:
+        print('Pattern match results:')
+        print('whole match:      |', found.group(0), '|', sep='')
+        print('first set of ():  |', found.group(1), '|', sep='')
+        print('second set of (): |', found.group(2), '|', sep='')
+    else:
+        print(in_str, 'does not contain the pattern.')
+
+valid_name('Smith, J')
+# valid_name('Madonna')  # try uncommenting these as well
+# valid_name('Morgan D')
+</textarea>
+<p>In the preceding code, <code class="docutils literal"><span class="pre">found</span></code> is the match object produced by the
+<code class="docutils literal"><span class="pre">search()</span></code> method. The <code class="docutils literal"><span class="pre">found.group(0)</span></code> method calls contains everything
+matched by the entire pattern. <code class="docutils literal"><span class="pre">found.group(1)</span></code> contains the part of the string that the
+first set of grouping parentheses matched&#8211;the last name, and <code class="docutils literal"><span class="pre">found.group(2)</span></code> contains
+the part of the string matched by the second set of grouping parentheses&#8211;the comma and
+initial, if any. If the pattern had more groups of parentheses, you would use <code class="docutils literal"><span class="pre">.group(3)</span></code>,
+<code class="docutils literal"><span class="pre">.group(4)</span></code>, and so forth.</p>
+<p>If you look at the output from &lt;kbd&gt;Smith, J&lt;/kbd&gt; you’ll see that the
+second set of grouping parentheses doesn’t give you quite what you want.
+The group stores the entire matched substring, which includes the comma. You’d like to
+store only the initial. You can do this two ways.  First, you can
+include yet another set of parentheses:</p>
+
+<textarea data-component="activecode" id=re_example10 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Using Nested Groups'>
+import re
+def valid_name(in_str):
+    found = re.search(r'^(\w+)(,?\s*([A-Z]))?$', in_str)
+    if found:
+        print('Pattern match results:')
+        print('whole match:     |', found.group(0), '|', sep='')
+        print('first set of (): |', found.group(1), '|', sep='')
+        print('outer set of (): |', found.group(2), '|', sep='')
+        print('inner set of (): |', found.group(3), '|', sep='')
+    else:
+        print(in_str, 'does not contain the pattern.')
+
+valid_name('Smith, J')
+</textarea>
+<p>If you do it this way, then the capital letter is stored in
+<code class="docutils literal"><span class="pre">found.group(3)</span></code> and the entire comma-and-initial is stored in <code class="docutils literal"><span class="pre">found.group(2)</span></code>.</p>
+<p>The other way to do this is to say that the outer parentheses should group but
+<em>not</em> store the matched portion in the
+result array. You do that with a question mark and colon right after
+the outer parentheses.</p>
+
+<textarea data-component="activecode" id=re_example11 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Using Non-storing Groups'>
+import re
+def valid_name(in_str):
+    found = re.search(r'^(\w+)(?:,?\s*([A-Z]))?$', in_str)
+    if found:
+        print('Pattern match results:')
+        print('whole match:     |', found.group(0), '|', sep='')
+        print('first set of (): |', found.group(1), '|', sep='')
+        print('inner set of (): |', found.group(2), '|', sep='')
+    else:
+        print(in_str, 'does not contain the pattern.')
+
+valid_name('Smith, J')
+</textarea>
+<p>In this case, the initial is in  <code class="docutils literal"><span class="pre">found.group(2)</span></code>, since the outer set of open parentheses
+doesn’t get stored. As you can see, patterns can
+very quickly become difficult to read, so let’s break this into parts:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">^</span></code> at the start of the string,</li>
+<li><code class="docutils literal"><span class="pre">(\w+)</span></code> look for (and remember) one or more “word” characters</li>
+<li><code class="docutils literal"><span class="pre">(?:</span></code>  start a non-storing group which consists of:<ul>
+<li><code class="docutils literal"><span class="pre">,?</span></code> an optional comma</li>
+<li><code class="docutils literal"><span class="pre">\s*</span></code> zero or more spaces</li>
+<li><code class="docutils literal"><span class="pre">([A-Z])</span></code> and a capital letter, which is remembered because it is in parentheses</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">)?</span></code> this ends the non-storing group; the question mark means it is all optional</li>
+<li><code class="docutils literal"><span class="pre">$</span></code> at which point we must be at the end of the string.</li>
+</ul>
+<p>Here is another example. Say you want to match a phone number and find the area code,
+prefix, and number. Note that when you want to match to a real parenthesis, you have to precede it with a backslash to make
+it “not part of a group.” You can do it this way:</p>
+
+<textarea data-component="activecode" id=re_example12 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Phone number with groups'>
+import re
+def valid_phone(in_str):
+    """Return a list giving the area code, prefix, and number;
+    if not a valid number, return empty strings for all three."""
+    found = re.search(r'\((\d{3})\)\s*(\d{3})-(\d{4})', in_str)
+    if found:
+       area_code = found.group(1)
+       prefix = found.group(2)
+       number = found.group(3)
+       result = [area_code, prefix, number]
+    else:
+       result = ['', '', '']
+    return result
+
+data = valid_phone('(408) 555-1212')
+print(data)
+</textarea>
+<p>Again, let’s break apart that pattern:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">\(</span></code> look for a real open parenthesis</li>
+<li><code class="docutils literal"><span class="pre">(\d{3})</span></code> followed by three digits (and store them)</li>
+<li><code class="docutils literal"><span class="pre">\)</span></code> and a real closing parenthesis</li>
+<li><code class="docutils literal"><span class="pre">\s*</span></code> followed by zero or more spaces</li>
+<li><code class="docutils literal"><span class="pre">(\d{3})</span></code> three digits (store them)</li>
+<li><code class="docutils literal"><span class="pre">-</span></code> a dash</li>
+<li><code class="docutils literal"><span class="pre">(\d{4})</span></code> and four more digits (store them)</li>
+</ul>
+</div>
+<div class="section" id="finding-all-occurrences">
+<h3>Finding All Occurrences<a class="headerlink" href="#finding-all-occurrences" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">re.search()</span></code> method finds only the first occurrence of a pattern within a string.
+If you want to find <em>all</em> the matches in a string, use <code class="docutils literal"><span class="pre">re.findall()</span></code>, which returns a
+list of matched substrings. (Unlike <code class="docutils literal"><span class="pre">re.search()</span></code>, which returns match objects.)
+Here is a pattern that finds a capital letter followed by an optional
+dash and a single digit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">r&#39;([A-Z]-?\d)&#39;</span>
+</pre></div>
+</div>
+<p>Let’s match to find all the occurrences of this pattern in the following string:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;Insert tabs B3, D-7, and C6 into slot A9.&#39;</span>
+</pre></div>
+</div>
+
+<textarea data-component="activecode" id=re_example14 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     data-caption='Finding all occurrences'>
+import re
+message = 'Insert tabs B3, D-7, and C6 into slot A9.'
+result = re.findall(r'([A-Z]-?\d)', message)
+if result:
+    for item in result:
+        print(item)
+else:
+    print('findall() did not find any matches to the pattern.')
+</textarea>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<p>This tutorial has shown you some of the main points of pattern matching. To learn all the ins and outs of
+regular expressions, see the <a class="reference external" href="https://docs.python.org/3/library/re.html">Python documentation</a></p>
+<p>Once you learn regular expressions, you will be able to use them in many text editors. For example, the
+“Replace” and “Find” dialogs in IDLE have a checkbox that let you use regular expressions to find and replace text.</p>
+</div>
+</div>
+</div>
+
+
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016 J David Eisenberg.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

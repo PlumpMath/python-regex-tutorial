@@ -43,6 +43,7 @@ look for patterns:
 The Simplest Patterns
 ---------------------
 
+To use regular expressions in python, you must import the **r**\ egular **e**\ xpression module with ``import re``.
 The simplest pattern to look for is a single letter. If you want to
 see if a variable ``word`` contains the letter ``e``, for
 example, you can use this code:

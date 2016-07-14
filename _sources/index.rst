@@ -34,7 +34,7 @@ be valid English words by the pattern of consonants and vowels:
     
     grunion vortenal pskov trebular elibm talus
 
-**Regular expressions** are Javascript’s method of letting your program
+**Regular expressions** are Python’s method of letting your program
 look for patterns:
 
 - A fraction is a series of digits followed by a slash, followed by another series of digits.
